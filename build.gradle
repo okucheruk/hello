@@ -30,8 +30,12 @@ plugins {
 
 spine.enableJava().server()
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+// Define the Java Language version to build the project
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
 
 // Add JUnit to the project.
 apply from: "$rootDir/gradle/tests.gradle"
